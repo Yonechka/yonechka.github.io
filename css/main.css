@@ -2341,13 +2341,23 @@ form .inputs-description {
   position: relative;
 }
 
+.my-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .my-gallery__item {
-  display: block;
-  position: relative;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 0;
-  overflow: hidden;
-  cursor: pointer;
+  margin: 0;
+}
+.my-gallery__item {
+  flex: 1 1 calc(33.333% - 10px); /* 3 kolom dengan jarak 10px */
+  box-sizing: border-box;
 }
 .my-gallery__item::after {
   content: "";
@@ -2502,8 +2512,15 @@ form .inputs-description {
 }
 
 .my-gallery__image {
-  opacity: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+.my-gallery__description {
+  text-align: center;
+  padding: 10px;
+}
+
 @media only screen and (min-width: 1200px) {
   .my-gallery__image {
     opacity: 0;
