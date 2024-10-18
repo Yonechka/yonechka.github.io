@@ -625,16 +625,26 @@
   </body>
 
   <script>
-    function testFunction(){
+    function testFunction() {
     alert('Ini adalah notifikasi dari JavaScript!');
-    id = 1;
-    name = "Fulan";
-    status = "online";
-    category = "bus";
-    test = "data terbaru dari fungsi js";
+    
+    let id = 1;
+    let name = "Fulan";
+    let status = "online";
+    let category = "bus";
+    let test = "data baru dari fungsi js";
+    
     console.log(test + ' (from web)');
     console.log("updated");
+    
+    return {
+        id: id,
+        name: name,
+        status: status,
+        category: category
+      };
     }
+
   </script>
 
 </html>
