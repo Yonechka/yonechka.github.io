@@ -636,8 +636,12 @@
         category:"Bus",
       }
 
-      window.JavaScriptChannel.postMessage(JSON.stringify(message));
-      console.log("create postmessage");
+      if (window.JavaScriptChannel) {
+        window.JavaScriptChannel.postMessage(JSON.stringify(message));
+        console.log('data send');
+      } else {
+        console.error('JavaScriptChannel tidak tersedia');
+      }
 
     }
 
