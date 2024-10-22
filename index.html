@@ -645,6 +645,24 @@
       };
     }
 
+    function postMessage() {
+      var message = {
+        action: "data from js",
+        data:"Hello from javascript",
+        id:"001",
+        name:"Fulan",
+        status:"Online",
+        category:"Bus",
+      }
+
+      window.flutterWebview.postMessage(JSON, stringify(message));
+    }
+
+    window.onload = function() {
+      postMessage();
+      console.log("berhasil load");
+    }
+
   </script>
 
 </html>
