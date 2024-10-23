@@ -627,21 +627,27 @@
   <script>
 
     function sendData() {
-      const message = {
-        action: "data from js",
-        data:"Hello from javascript",
-        id:"001",
-        name:"Fulan",
-        status:"Online",
-        category:"Bus",
-      }
+      let currentData = {
+    action: "data from js",
+    data: "Hello from javascript",
+    id: "001",
+    name: "Fulan",
+    status: "Online",
+    category: "Bus",
+    };
 
+    function sendData() {
       if (window.JavaScriptChannel) {
-        window.JavaScriptChannel.postMessage(JSON.stringify(message));
-        console.log('data send');
+        window.JavaScriptChannel.postMessage(JSON.stringify(currentData));
+        console.log('data sent');
       } else {
         console.error('JavaScriptChannel tidak tersedia');
       }
+    }
+
+    function getCurrentData() {
+      return currentData;
+    }
 
     }
 
