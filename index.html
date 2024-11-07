@@ -642,10 +642,46 @@
         category: "Bus",
     };
 
+    const currentDatas = [
+      {
+        action: "data from js",
+        data: "Hello from javascript",
+        id: "001",
+        barcode: "awokawokawok",
+        name: "Fulan",
+        mitra: "KRUZZ JATINANGOR",
+        jadwal: "Jumat, 1 Nov 2024",
+        code: "SAD-JAT-17:00",
+        pickup: "BANDUNG",
+        dropoff: "PALU",
+        time:"17:00",
+        chair:"8",
+        status: "Online",
+        category: "Bus",
+      },
+      {
+        action: "data from js",
+        data: "Hello from javascript",
+        id: "002",
+        barcode: "wkwkwkwk",
+        name: "Zaid",
+        mitra: "KRUZZ JATINANGOR",
+        jadwal: "Jumat, 8 Nov 2024",
+        code: "SAD-JAT-12:00",
+        pickup: "JOGJA",
+        dropoff: "LAMPUNG",
+        time:"12:00",
+        chair:"10",
+        status: "Online",
+        category: "Bus",
+      }
+    ]
+
     function sendData() {
         if (window.JavaScriptChannel) {
             window.JavaScriptChannel.postMessage(JSON.stringify(currentData));
-            console.log('data sent');
+            window.JavaScriptChannel.postMessage(JSON.stringify(currentDatas));
+            console.log('data sents');
         } else {
             console.error('JavaScriptChannel tidak tersedia');
         }
