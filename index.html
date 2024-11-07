@@ -662,7 +662,6 @@
 
     function sendData() {
         if (window.JavaScriptChannel) {
-            window.JavaScriptChannel.postMessage(JSON.stringify(currentData));
             window.JavaScriptChannel.postMessage(JSON.stringify(currentDatas));
             console.log('data sents');
         } else {
