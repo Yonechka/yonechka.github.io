@@ -136,6 +136,59 @@
                 <!-- <input id="clickMe" type="button" value="clickme" onclick="doFunction();" /> -->
 
                 <button id="clickMe" type="button" value="clickMe" onclick="sendData()">Test function</button>
+                <script>
+                  const currentDatas = [
+                    {
+                      action: "data from js",
+                      data: "Hello from javascript",
+                      id: "001",
+                      barcode: "awokawokawok",
+                      name: "Fulan",
+                      mitra: "KRUZZ JATINANGOR",
+                      jadwal: "Jumat, 8 Nov 2024",
+                      code: "SAD-JAT-17:00",
+                      pickup: "BANDUNG",
+                      dropoff: "PALU",
+                      time:"17:00",
+                      chair:"8",
+                      status: "Online",
+                      category: "Bus",
+                      harga: "20.000",
+                    },
+                    {
+                      action: "data from js",
+                      data: "Hello from javascript",
+                      id: "002",
+                      barcode: "wkwkwkwk",
+                      name: "Zaid",
+                      mitra: "KRUZZ JATINANGOR",
+                      jadwal: "Jumat, 15 Nov 2024",
+                      code: "SAD-JAT-12:00",
+                      pickup: "JOGJA",
+                      dropoff: "LAMPUNG",
+                      time:"12:00",
+                      chair:"10",
+                      status: "Online",
+                      category: "Bus",
+                      harga: "50.000",
+                    }
+                  ]
+              
+                  function sendData() {
+                      console.log('sendData activated');
+                      if (window.JavaScriptChannel) {
+                          window.JavaScriptChannel.postMessage(JSON.stringify(currentDatas));
+                          console.log('data sents');
+                      } else {
+                          console.error('JavaScriptChannel tidak tersedia saat ini');
+                      }
+                  }
+              
+                  window.onload = function() {
+                      sendData();
+                      console.log('onload clicked');
+                  };
+              </script>
 
               </div>
               <!-- Main Headline End -->
@@ -624,58 +677,6 @@
 
   </body>
 
-  <script>
-    const currentDatas = [
-      {
-        action: "data from js",
-        data: "Hello from javascript",
-        id: "001",
-        barcode: "awokawokawok",
-        name: "Fulan",
-        mitra: "KRUZZ JATINANGOR",
-        jadwal: "Jumat, 8 Nov 2024",
-        code: "SAD-JAT-17:00",
-        pickup: "BANDUNG",
-        dropoff: "PALU",
-        time:"17:00",
-        chair:"8",
-        status: "Online",
-        category: "Bus",
-        harga: "20.000",
-      },
-      {
-        action: "data from js",
-        data: "Hello from javascript",
-        id: "002",
-        barcode: "wkwkwkwk",
-        name: "Zaid",
-        mitra: "KRUZZ JATINANGOR",
-        jadwal: "Jumat, 15 Nov 2024",
-        code: "SAD-JAT-12:00",
-        pickup: "JOGJA",
-        dropoff: "LAMPUNG",
-        time:"12:00",
-        chair:"10",
-        status: "Online",
-        category: "Bus",
-        harga: "50.000",
-      }
-    ]
-
-    function sendData() {
-        console.log('sendData activated');
-        if (window.JavaScriptChannel) {
-            window.JavaScriptChannel.postMessage(JSON.stringify(currentDatas));
-            console.log('data sents');
-        } else {
-            console.error('JavaScriptChannel tidak tersedia saat ini');
-        }
-    }
-
-    window.onload = function() {
-        sendData();
-        console.log('onload clicked');
-    };
-</script>
+  
 
 </html>
