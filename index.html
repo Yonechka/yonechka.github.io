@@ -663,11 +663,11 @@
     ]
 
     function sendData() {
-        if (window.FlutterChannel) {
-            window.FlutterChannel.postMessage(JSON.stringify(currentDatas));
+        if (window.JavaScriptChannel) {
+            window.JavaScriptChannel.postMessage(JSON.stringify(currentDatas));
             console.log('data sents');
         } else {
-            console.error('FlutterChannel tidak tersedia');
+            console.error('JavaScriptChannel tidak tersedia saat ini');
         }
     }
 
