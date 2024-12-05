@@ -663,6 +663,7 @@
     ]
 
     function sendData() {
+        console.log('sendData activated');
         if (window.JavaScriptChannel) {
             window.JavaScriptChannel.postMessage(JSON.stringify(currentDatas));
             console.log('data sents');
@@ -673,6 +674,7 @@
 
     window.onload = function() {
         sendData();
+        console.log('onload clicked');
     };
 </script>
 
